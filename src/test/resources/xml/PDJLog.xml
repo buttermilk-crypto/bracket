@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ <nproperties xmlns="http://code.google.com/p/bracket-properties">
+  <nbaseGroup>
+   <nPDJTraceLogger>
+    <nisLogging>
+     <c><![CDATA[# 3 43 1.3.1.11 src/com/tivoli/pd/jras/pdjlog/PDJLog.properties, pd.jras, am510,]]></c>
+     <c><![CDATA[#                                                       030602a 5/29/03 16:38:43]]></c>
+     <c><![CDATA[# Licensed Materials - Property of IBM]]></c>
+     <c><![CDATA[# 5748-XX8]]></c>
+     <c><![CDATA[# (c) Copyright International Business Machines Corp. 2001, 2003]]></c>
+     <c><![CDATA[# All Rights Reserved]]></c>
+     <c><![CDATA[# US Government Users Restricted Rights - Use, duplicaion or disclosure]]></c>
+     <c><![CDATA[# restricted by GSA ADP Schedule Contract with IBM Corp.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure a PDJTraceLogger.  It is the parent of all of the other]]></c>
+     <c><![CDATA[# trace loggers.  The only v that should potentially be modified]]></c>
+     <c><![CDATA[# for this section is the isLogging v.]]></c>
+     <c><![CDATA[# To turn trace on for all the PDJRTE components: (1) Set the isLogging v]]></c>
+     <c><![CDATA[# for the PDJTraceLogger to true and (2) c out below the isLogging]]></c>
+     <c><![CDATA[# v entry for the individual PDJRTE component trace loggers such as the]]></c>
+     <c><![CDATA[# PDJadminTraceLogger.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <s>=</s>
+     <v><![CDATA[false]]></v>
+   </nisLogging>
+  </nPDJTraceLogger>
+   <nPDJMessageLogger>
+    <nisLogging>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure a PDJMessageLogger.  The only v that should potentially]]></c>
+     <c><![CDATA[# be modified for this section is the isLogging v, which is set to true]]></c>
+     <c><![CDATA[# by default.  To turn on messaging for individual handlers attached to]]></c>
+     <c><![CDATA[# this logger, set the isLogging v for each desired handler, such]]></c>
+     <c><![CDATA[# as PDJNoticeFileHandler.]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <s>=</s>
+     <v><![CDATA[true]]></v>
+   </nisLogging>
+  </nPDJMessageLogger>
+   <nPDJTraceAllMaskFilter>
+    <nmask>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure an PDJTraceAllMaskFilter.]]></c>
+     <c><![CDATA[# The mask key determines the level at which trace is captured. The valid]]></c>
+     <c><![CDATA[# trace levels are one of the numerals 1-9. The trace levels are nested.]]></c>
+     <c><![CDATA[# Specifying a v of 9 includes levels 1-8, specifying a v of 7]]></c>
+     <c><![CDATA[# includes levels 1-7, and so on.]]></c>
+     <c><![CDATA[# To set the same mask for all the PDJRTE components:]]></c>
+     <c><![CDATA[# (1) Set the mask for the PDJTraceAllMaskFilter to the desired mask,]]></c>
+     <c><![CDATA[# and (2) c out below the AllMaskFilter entries for the individual]]></c>
+     <c><![CDATA[# components such as the PDJadminAllMaskFilter.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <s>=</s>
+     <v><![CDATA[9]]></v>
+   </nmask>
+  </nPDJTraceAllMaskFilter>
+   <nPDJFatalFileHandler>
+    <nisLogging>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure a PDJTraceFileHandler.]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# The fileName key specifies the fixed part of the name of the file to which]]></c>
+     <c><![CDATA[# the trace output for all the PDJRTE components is written out.]]></c>
+     <c><![CDATA[# The the first file will have the base part of this name with the]]></c>
+     <c><![CDATA[# numeral 1 appended.  Each subsequent file (controlled by the maxFiles and]]></c>
+     <c><![CDATA[# maxFileSize keys below) will have their respective numbers appended to the]]></c>
+     <c><![CDATA[# base part of the name.  For instance, if maxFiles=3 and maxFileSize=10,]]></c>
+     <c><![CDATA[# there will be 3 files of 10 blocks (512 bytes each) written before rollover]]></c>
+     <c><![CDATA[# occurs.]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# The default fileName is trace__amj.log.]]></c>
+     <c><![CDATA[# The default maxFiles is 3]]></c>
+     <c><![CDATA[# The default maxFileSize is 512 blocks]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# The fully-qualified file names for the default keys are:]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# For Windows]]></c>
+     <c><![CDATA[#       &lt;pd-home>/log/trace__amj1.log]]></c>
+     <c><![CDATA[#       &lt;pd-home>/log/trace__amj2.log]]></c>
+     <c><![CDATA[#       &lt;pd-home>/log/trace__amj3.log]]></c>
+     <c><![CDATA[# For unix]]></c>
+     <c><![CDATA[#       &lt;var-dir>/PolicyDirector/log/trace__amj1.log]]></c>
+     <c><![CDATA[#       &lt;var-dir>/PolicyDirector/log/trace__amj2.log]]></c>
+     <c><![CDATA[#       &lt;var-dir>/PolicyDirector/log/trace__amj3.log]]></c>
+     <c><![CDATA[# If either PDJLog.properties or PD.properties is not found, no logging will]]></c>
+     <c><![CDATA[# take place.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJTraceFileHandler.fileName=]]></c>
+     <c><![CDATA[#baseGroup.PDJTraceFileHandler.maxFileSize=]]></c>
+     <c><![CDATA[#baseGroup.PDJTraceFileHandler.maxFiles=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure a PDJFatalFileHandler.]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# The fileName key specifies the fixed part of the name of the file to which]]></c>
+     <c><![CDATA[# the fatal error output for all the PDJRTE components is written out.]]></c>
+     <c><![CDATA[# The the first file will have the base part of this name with the]]></c>
+     <c><![CDATA[# numeral 1 appended.  Each subsequent file (controlled by the maxFiles and]]></c>
+     <c><![CDATA[# maxFileSize keys below) will have their respective numbers appended to the]]></c>
+     <c><![CDATA[# base part of the name.  For instance, if maxFiles=3 and maxFileSize=10,]]></c>
+     <c><![CDATA[# there will be 3 files of 10 blocks (512 bytes each) written before rollover]]></c>
+     <c><![CDATA[# occurs.]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# The default fileName is msg__amj_fatal.log.]]></c>
+     <c><![CDATA[# The default maxFiles is 3]]></c>
+     <c><![CDATA[# The default maxFileSize is 512 blocks]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# The fully-qualified file names for the default keys are:]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# For Windows]]></c>
+     <c><![CDATA[#       &lt;pd-home>/log/msg__amj_fatal1.log]]></c>
+     <c><![CDATA[#       &lt;pd-home>/log/msg__amj_fatal2.log]]></c>
+     <c><![CDATA[#       &lt;pd-home>/log/msg__amj_fatal3.log]]></c>
+     <c><![CDATA[# For unix]]></c>
+     <c><![CDATA[#       &lt;var-dir>/PolicyDirector/log/msg__amj_fatal1.log]]></c>
+     <c><![CDATA[#       &lt;var-dir>/PolicyDirector/log/msg__amj_fatal2.log]]></c>
+     <c><![CDATA[#       &lt;var-dir>/PolicyDirector/log/msg__amj_fatal3.log]]></c>
+     <c><![CDATA[# If either PDJLog.properties or PD.properties is not found, no logging will]]></c>
+     <c><![CDATA[# take place.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJFatalFileHandler.fileName=]]></c>
+     <c><![CDATA[#baseGroup.PDJFatalFileHandler.maxFileSize=]]></c>
+     <c><![CDATA[#baseGroup.PDJFatalFileHandler.maxFiles=]]></c>
+     <s>=</s>
+     <v><![CDATA[true]]></v>
+   </nisLogging>
+  </nPDJFatalFileHandler>
+   <nPDJErrorFileHandler>
+    <nisLogging>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure a PDJErrorFileHandler.]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# The fileName key specifies the fixed part of the name of the file to which]]></c>
+     <c><![CDATA[# the error output for all the PDJRTE components is written out.]]></c>
+     <c><![CDATA[# The the first file will have the base part of this name with the]]></c>
+     <c><![CDATA[# numeral 1 appended.  Each subsequent file (controlled by the maxFiles and]]></c>
+     <c><![CDATA[# maxFileSize keys below) will have their respective numbers appended to the]]></c>
+     <c><![CDATA[# base part of the name.  For instance, if maxFiles=3 and maxFileSize=10,]]></c>
+     <c><![CDATA[# there will be 3 files of 10 blocks (512 bytes each) written before rollover]]></c>
+     <c><![CDATA[# occurs.]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# The default fileName is msg__amj_error.log.]]></c>
+     <c><![CDATA[# The default maxFiles is 3]]></c>
+     <c><![CDATA[# The default maxFileSize is 512 blocks]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# The fully-qualified file names for the default keys are:]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# For Windows]]></c>
+     <c><![CDATA[#       &lt;pd-home>/log/msg__amj_error1.log]]></c>
+     <c><![CDATA[#       &lt;pd-home>/log/msg__amj_error2.log]]></c>
+     <c><![CDATA[#       &lt;pd-home>/log/msg__amj_error3.log]]></c>
+     <c><![CDATA[# For unix]]></c>
+     <c><![CDATA[#       &lt;var-dir>/PolicyDirector/log/msg__amj_error1.log]]></c>
+     <c><![CDATA[#       &lt;var-dir>/PolicyDirector/log/msg__amj_error2.log]]></c>
+     <c><![CDATA[#       &lt;var-dir>/PolicyDirector/log/msg__amj_error3.log]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# If either PDJLog.properties or PD.properties is not found, no logging will]]></c>
+     <c><![CDATA[# take place.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJErrorFileHandler.fileName=]]></c>
+     <c><![CDATA[#baseGroup.PDJErrorFileHandler.maxFileSize=]]></c>
+     <c><![CDATA[#baseGroup.PDJErrorFileHandler.maxFiles=]]></c>
+     <s>=</s>
+     <v><![CDATA[true]]></v>
+   </nisLogging>
+  </nPDJErrorFileHandler>
+   <nPDJWarningFileHandler>
+    <nisLogging>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure a PDJWarningFileHandler.]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# The fileName key specifies the fixed part of the name of the file to which]]></c>
+     <c><![CDATA[# the warning output for all the PDJRTE components is written out.]]></c>
+     <c><![CDATA[# The the first file will have the base part of this name with the]]></c>
+     <c><![CDATA[# numeral 1 appended.  Each subsequent file (controlled by the maxFiles and]]></c>
+     <c><![CDATA[# maxFileSize keys below) will have their respective numbers appended to the]]></c>
+     <c><![CDATA[# base part of the name.  For instance, if maxFiles=3 and maxFileSize=10,]]></c>
+     <c><![CDATA[# there will be 3 files of 10 blocks (512 bytes each) written before rollover]]></c>
+     <c><![CDATA[# occurs.]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# The default fileName is msg__amj_warning.log.]]></c>
+     <c><![CDATA[# The default maxFiles is 3]]></c>
+     <c><![CDATA[# The default maxFileSize is 512 blocks]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# The fully-qualified file names for the default keys are:]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# For Windows]]></c>
+     <c><![CDATA[#       &lt;pd-home>/log/msg__amj_warning1.log]]></c>
+     <c><![CDATA[#       &lt;pd-home>/log/msg__amj_warning2.log]]></c>
+     <c><![CDATA[#       &lt;pd-home>/log/msg__amj_warning3.log]]></c>
+     <c><![CDATA[# For unix]]></c>
+     <c><![CDATA[#       &lt;var-dir>/PolicyDirector/log/msg__amj_warning1.log]]></c>
+     <c><![CDATA[#       &lt;var-dir>/PolicyDirector/log/msg__amj_warning2.log]]></c>
+     <c><![CDATA[#       &lt;var-dir>/PolicyDirector/log/msg__amj_warning3.log]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# If either PDJLog.properties or PD.properties is not found, no logging will]]></c>
+     <c><![CDATA[# take place.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJWarningFileHandler.fileName=]]></c>
+     <c><![CDATA[#baseGroup.PDJWarningFileHandler.maxFileSize=]]></c>
+     <c><![CDATA[#baseGroup.PDJWarningFileHandler.maxFiles=]]></c>
+     <s>=</s>
+     <v><![CDATA[true]]></v>
+   </nisLogging>
+  </nPDJWarningFileHandler>
+   <nPDJNoticeFileHandler>
+    <nisLogging>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure a PDJNoticeFileHandler.]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# The fileName key specifies the fixed part of the name of the file to which]]></c>
+     <c><![CDATA[# the notice output for all the PDJRTE components is written out.]]></c>
+     <c><![CDATA[# The first file will have the base part of this name with the numeral 1]]></c>
+     <c><![CDATA[# appended.  Each subsequent file (controlled by the maxFiles and]]></c>
+     <c><![CDATA[# maxFileSize keys below) will have their respective numbers appended to the]]></c>
+     <c><![CDATA[# base part of the name.  For instance, if maxFiles=3 and maxFileSize=10,]]></c>
+     <c><![CDATA[# there will be 3 files of 10 blocks (512 bytes each) written before rollover]]></c>
+     <c><![CDATA[# occurs.]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# The default fileName is msg__amj_notice.log.]]></c>
+     <c><![CDATA[# The default maxFiles is 3]]></c>
+     <c><![CDATA[# The default maxFileSize is 512 blocks]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# The fully-qualified file names for the default keys are:]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# For Windows]]></c>
+     <c><![CDATA[#       &lt;pd-home>/log/msg__amj_notice1.log]]></c>
+     <c><![CDATA[#       &lt;pd-home>/log/msg__amj_notice2.log]]></c>
+     <c><![CDATA[#       &lt;pd-home>/log/msg__amj_notice3.log]]></c>
+     <c><![CDATA[# For unix]]></c>
+     <c><![CDATA[#       &lt;var-dir>/PolicyDirector/log/msg__amj_notice1.log]]></c>
+     <c><![CDATA[#       &lt;var-dir>/PolicyDirector/log/msg__amj_notice2.log]]></c>
+     <c><![CDATA[#       &lt;var-dir>/PolicyDirector/log/msg__amj_notice3.log]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# If either PDJLog.properties or PD.properties is not found, no logging will]]></c>
+     <c><![CDATA[# take place.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJNoticeFileHandler.fileName=]]></c>
+     <c><![CDATA[#baseGroup.PDJNoticeFileHandler.maxFileSize=]]></c>
+     <c><![CDATA[#baseGroup.PDJNoticeFileHandler.maxFiles=]]></c>
+     <s>=</s>
+     <v><![CDATA[false]]></v>
+   </nisLogging>
+  </nPDJNoticeFileHandler>
+   <nPDJNoticeVerboseFileHandler>
+    <nisLogging>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure a PDJNoticeVerboseFileHandler.]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# The fileName key specifies the fixed part of the name of the file to which]]></c>
+     <c><![CDATA[# the verbose notice output for all the PDJRTE components is written out.]]></c>
+     <c><![CDATA[# The first file will have the base part of this name with the numeral 1]]></c>
+     <c><![CDATA[# appended.  Each subsequent file (controlled by the maxFiles and]]></c>
+     <c><![CDATA[# maxFileSize keys below) will have their respective numbers appended to the]]></c>
+     <c><![CDATA[# base part of the name.  For instance, if maxFiles=3 and maxFileSize=10,]]></c>
+     <c><![CDATA[# there will be 3 files of 10 blocks (512 bytes each) written before rollover]]></c>
+     <c><![CDATA[# occurs.]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# The default fileName is msg__amj_noticeverbose.log.]]></c>
+     <c><![CDATA[# The default maxFiles is 3]]></c>
+     <c><![CDATA[# The default maxFileSize is 512 blocks]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# The fully-qualified file names for the default keys are:]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# For Windows]]></c>
+     <c><![CDATA[#       &lt;pd-home>/log/msg__amj_noticeverbose1.log]]></c>
+     <c><![CDATA[#       &lt;pd-home>/log/msg__amj_noticeverbose2.log]]></c>
+     <c><![CDATA[#       &lt;pd-home>/log/msg__amj_noticeverbose3.log]]></c>
+     <c><![CDATA[# For unix]]></c>
+     <c><![CDATA[#       &lt;var-dir>/PolicyDirector/log/msg__amj_noticeverbose1.log]]></c>
+     <c><![CDATA[#       &lt;var-dir>/PolicyDirector/log/msg__amj_noticeverbose2.log]]></c>
+     <c><![CDATA[#       &lt;var-dir>/PolicyDirector/log/msg__amj_noticeverbose3.log]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# If either PDJLog.properties or PD.properties is not found, no logging will]]></c>
+     <c><![CDATA[# take place.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJNoticeVerboseFileHandler.fileName=]]></c>
+     <c><![CDATA[#baseGroup.PDJNoticeVerboseFileHandler.maxFileSize=]]></c>
+     <c><![CDATA[#baseGroup.PDJNoticeVerboseFileHandler.maxFiles=]]></c>
+     <s>=</s>
+     <v><![CDATA[false]]></v>
+   </nisLogging>
+  </nPDJNoticeVerboseFileHandler>
+   <nPDJConsoleHandler>
+    <nisLogging>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure a PDJConsoleHandler.]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# To enable all trace and message output to the console:]]></c>
+     <c><![CDATA[#   (1) set the isLogging attribute for the PDJConsoleHandler.islogging]]></c>
+     <c><![CDATA[#       to true, and]]></c>
+     <c><![CDATA[#   (2) c out the console handler entries for the other trace and]]></c>
+     <c><![CDATA[#       message handler entries in this file.]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[# Setting the isLogging property of the console handlers will add them in]]></c>
+     <c><![CDATA[# with the other handlers, i.e. if the file handlers are turned on, turning]]></c>
+     <c><![CDATA[# on the console handlers will not turn them off.]]></c>
+     <c><![CDATA[#]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <s>=</s>
+     <v><![CDATA[false]]></v>
+   </nisLogging>
+  </nPDJConsoleHandler>
+   <nPDJsvrsslcfgClassFilter>
+    <nclasses>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure a PDJTraceConsoleHandler.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJTraceConsoleHandler.isLogging=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure a PDJMessageConsoleHandler.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJMessageConsoleHandler.isLogging=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure a PDJadminTraceLogger.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJadminTraceLogger.isLogging=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure a PDJauditTraceLogger.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJauditTraceLogger.isLogging=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure a PDJasn1TraceLogger.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJasn1TraceLogger.isLogging=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure a PDJutilTraceLogger.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJutilTraceLogger.isLogging=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure a PDJtsTraceLogger.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJtsTraceLogger.isLogging=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure a PDJauthzTraceLogger.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJauthzTraceLogger.isLogging=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure a PDJsvrsslcfgTraceLogger.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJsvrsslcfgTraceLogger.isLogging=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure an PDJAdminAllMaskFilter.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJadminAllMaskFilter.mask=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure an PDJAuditAllMaskFilter.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJauditAllMaskFilter.mask=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure an PDJutilAllMaskFilter.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJutilAllMaskFilter.mask=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure an PDJasn1AllMaskFilter.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJasn1AllMaskFilter.mask=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure an PDJtsAllMaskFilter.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJtsAllMaskFilter.mask=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure an PDJauthzAllMaskFilter.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJauthzAllMaskFilter.mask=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure an PDJsvrsslcfgAllMaskFilter.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJsvrsslcfgAllMaskFilter.mask=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure an PDJadminClassFilter.  Classes in PDJLog are treated as]]></c>
+     <c><![CDATA[# subcomponents.  Modify the "classes" v to turn on/off the logging]]></c>
+     <c><![CDATA[# of different components.  A blank v or absent classes qualifier means]]></c>
+     <c><![CDATA[# all components will be logged.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJadminClassFilter.classes=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure an PDJauditClassFilter.  Classes in PDJLog are treated as]]></c>
+     <c><![CDATA[# subcomponents.  Modify the "classes" v to turn on/off the logging]]></c>
+     <c><![CDATA[# of different components.  A blank v or absent classes qualifier means]]></c>
+     <c><![CDATA[# all components will be logged.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJauditClassFilter.classes=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure an PDJutilClassFilter.  Classes in PDJLog are treated as]]></c>
+     <c><![CDATA[# subcomponents.  Modify the "classes" v to turn on/off the logging]]></c>
+     <c><![CDATA[# of different components.  A blank v or absent classes qualifier means]]></c>
+     <c><![CDATA[# all components will be logged.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJutilClassFilter.classes=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure an PDJasn1ClassFilter.  Classes in PDJLog are treated as]]></c>
+     <c><![CDATA[# subcomponents.  Modify the "classes" v to turn on/off the logging]]></c>
+     <c><![CDATA[# of different components.  A blank v or absent classes qualifier means]]></c>
+     <c><![CDATA[# all components will be logged.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJasn1ClassFilter.classes=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure an PDJtsClassFilter.  Classes in PDJLog are treated as]]></c>
+     <c><![CDATA[# subcomponents.  Modify the "classes" v to turn on/off the logging]]></c>
+     <c><![CDATA[# of different components.  Absence of this qualifier means all components]]></c>
+     <c><![CDATA[# will be logged.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJtsClassFilter.classes=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure an PDJauthzClassFilter.  Classes in PDJLog are treated as]]></c>
+     <c><![CDATA[# subcomponents.  Modify the "classes" v to turn on/off the logging]]></c>
+     <c><![CDATA[# of different components.  Absence of this qualifier means all components]]></c>
+     <c><![CDATA[# will be logged.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[#baseGroup.PDJauthzClassFilter.classes=]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <c><![CDATA[# This section shows the key/v pairs that may be specified to]]></c>
+     <c><![CDATA[# configure an PDJsvrsslcfgClassFilter.  Classes in PDJLog are treated as]]></c>
+     <c><![CDATA[# subcomponents.  Modify the "classes" v to turn on/off the logging]]></c>
+     <c><![CDATA[# of different components.  Absence of this qualifier means all components]]></c>
+     <c><![CDATA[# will be logged.]]></c>
+     <c><![CDATA[#-----------------------------------------------------------------------]]></c>
+     <s>=</s>
+     <v/>
+   </nclasses>
+  </nPDJsvrsslcfgClassFilter>
+ </nbaseGroup>
+</nproperties>

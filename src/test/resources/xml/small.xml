@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ <nproperties xmlns="http://code.google.com/p/bracket-properties">
+  <na>
+   <nb>
+    <nc>
+     <c><![CDATA[# test comment   ]]></c>
+     <s>=</s>
+     <v><![CDATA[a value]]></v>
+    </nc>
+   </nb>
+  </na>
+</nproperties>

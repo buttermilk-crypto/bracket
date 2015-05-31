@@ -1,0 +1,5 @@
+
+propertyBefore=value
+multiLineProperty=line1,\
+nestedKey=nestedValue
+propertyAfter=value
