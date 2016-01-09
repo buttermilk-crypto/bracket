@@ -35,11 +35,13 @@ import asia.redact.bracket.properties.mgmt.PropertiesReference;
 /**
  * <pre>
  * In the java.util package, Properties is not an Interface. Bracket Properties
- * has one, which allows (among other things) for both a standard and a sorted implementation. The
+ * has one, which allows for both a standard and a sorted implementation. The
  * standard implementation is backed by a LinkedHashMap, which keeps insertion
- * order intact. This is a critical issue for non-trivial use of Properties files.
+ * order intact. The sorted implementation can do other things with the order which
+ * extend beyond insertion order. These are useful capabilities for non-trivial use 
+ * of Properties files.
  * 
- * This interface is also home to the static Factory, which is the supported way to 
+ * This interface is also home to the static Factory, which is the suggested way to 
  * instantiate a Bracket Properties object.
  * 
  * </pre>
@@ -55,7 +57,7 @@ public interface Properties extends Serializable {
 	public Map<String, ValueModel> getPropertyMap();
 	
 	/**
-	 * Just return Strings
+	 * Just return Strings as the values
 	 * 
 	 * @return
 	 */
