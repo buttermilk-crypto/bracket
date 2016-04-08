@@ -296,12 +296,19 @@ public class PropertiesImpl extends AbstractMapDerivedPropertiesBase implements 
 	public void put(String key, float val){
 		put(key,String.valueOf(val));
 	}
+	
+	public void put(String key, long val){
+		put(key,String.valueOf(val));
+	}
+	
 	public void put(String key, double val){
 		put(key,String.valueOf(val));
 	}
+	
 	public void put(String key, boolean val){
 		put(key,String.valueOf(val));
 	}
+	
 	public void put(String key, char val){
 		put(key,String.valueOf(val));
 	}
@@ -569,6 +576,10 @@ public class PropertiesImpl extends AbstractMapDerivedPropertiesBase implements 
 
 	public long longValue(String key) {
 		return Long.parseLong(get(key));
+	}
+	
+	public float floatValue(String key) {
+		return Float.parseFloat(get(key));
 	}
 
 	/**

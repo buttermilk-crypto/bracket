@@ -12,6 +12,7 @@ import java.math.BigInteger;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.BitSet;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -160,7 +161,7 @@ public class DemoTest1 {
 		Properties props = Properties.Factory.getInstance();
 		
 		props.put("key0", "val");
-		props.put("key1", "first line ", "continuation1 ", "continuation2");
+		props.put("key1", "first line ", "\ncontinuation1 ", "\ncontinuation2");
 		System.err.println("key1: " + props.get("key1"));
 		
 		String key2 = "key2";
@@ -171,11 +172,26 @@ public class DemoTest1 {
 		System.err.println(props.getPropertyMap().get(key2).asKeyValueRep(key2));
 		
 		props.put("key.int", 10);
+		props.put("key.float", 1f);
 		props.put("key.long", 1L);
 		props.put("key.bool", true);
 		props.put("key.date", new Date().getTime());
 		props.put("key.biginteger", new BigInteger("1"));
 		props.put("key.bigdecimal", new BigDecimal(Math.PI));
+		props.put("key.bitset", "0111");
+		
+		props.intValue("key.int");
+		props.floatValue("key.float");
+		props.longValue("key.long");
+		props.booleanValue("key.bool");
+		props.dateValue("key.date");
+		props.bigValue("key.biginteger");
+		props.bigDecimalValue("key.bigdecimal");
+		
+		BitSet bs = props.bitsetValue("key.bitset");
+		for(int i = 0; i<bs.length(); i++) {
+			System.err.println(bs.get(i));
+		}
 		
 	}
 	

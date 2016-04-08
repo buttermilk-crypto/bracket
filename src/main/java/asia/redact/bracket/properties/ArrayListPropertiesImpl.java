@@ -798,4 +798,14 @@ public class ArrayListPropertiesImpl extends PropertiesBaseImpl implements Prope
 		}
 	}
 
+	@Override
+	public float floatValue(String key) {
+		return Float.parseFloat(get(key));
+	}
+
+	@Override
+	public void put(String key, long val){
+		put(key,String.valueOf(val));
+	}
+
 }

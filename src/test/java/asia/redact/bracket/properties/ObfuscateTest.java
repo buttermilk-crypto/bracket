@@ -64,5 +64,24 @@ public class ObfuscateTest {
 		file.delete();
 		
 	}
+	
+	@Test
+	public void test2() {
+		
+		Properties props = Properties.Factory.getInstance();
+		props.put("key", "value");
+		
+		// obfuscate value internally
+		props.obfuscate("key");
+		
+		System.out.println(props.get("key")); // prints something like nqJxv2ZOfgcLrOvUd9r1aJ0TK5aVTxZmVbgKbJsGzFQ=
+		
+		// deobfuscate value internally
+		props.deobfuscate("key");
+		
+		System.out.println(props.get("key")); // prints "value"
+		Assert.assertEquals(props.get("key"), "value");
+		
+	}
 
 }

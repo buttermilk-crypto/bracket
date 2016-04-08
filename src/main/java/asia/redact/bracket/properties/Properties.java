@@ -106,6 +106,8 @@ public interface Properties extends Serializable {
 	 */
 	public long longValue(String key);
 	
+	public float floatValue(String key);
+	
 	/**
 	 * Date value here is assumed to be a long
 	 * @param key
@@ -244,6 +246,7 @@ public interface Properties extends Serializable {
 	
 	public void put(String key, int val);
 	public void put(String key, float val);
+	public void put(String key, long val);
 	public void put(String key, double val);
 	public void put(String key, boolean val);
 	public void put(String key, char val);

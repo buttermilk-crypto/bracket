@@ -581,4 +581,14 @@ public class ImmutablePropertiesImpl extends PropertiesBaseImpl implements Prope
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
+	public float floatValue(String key) {
+		return Float.parseFloat(get(key));
+	}
+
+	@Override
+	public void put(String key, long val) {
+		throw new UnsupportedOperationException();
+	}
+
 }
