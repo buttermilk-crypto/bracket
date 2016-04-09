@@ -107,6 +107,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
+		<!--  needed to get my inadequate comments to parse in Java 1.8 javadoc -->
 		<additionalparam>-Xdoclint:none</additionalparam>
 	</properties>
 	
