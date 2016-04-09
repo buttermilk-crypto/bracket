@@ -1,6 +1,6 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
 package asia.redact.bracket.properties;
@@ -10,12 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * <pre>
- * Used to represent the properties keys as a tree. 
- * 
+ * Used to represent the properties keys as a tree. This is mainly for use by the XML representation. 
  * Not all properties may effectively use this representation, they must meet the requirements of the XML spec
  * 
- * </pre>
  * @author Dave
  *
  * @see OutputAdapter 
@@ -49,25 +46,16 @@ public class NodeImpl implements Node, Serializable {
 		children.add(child);
 	}
 	
-	/* (non-Javadoc)
-	 * @see asia.redact.bracket.properties.Node#addChild(java.lang.String, java.lang.String)
-	 */
 	public void addChild(String name, String value){
 		NodeImpl n = new NodeImpl(name,value);
 		addChild(n);
 	}
 	
-	/* (non-Javadoc)
-	 * @see asia.redact.bracket.properties.Node#addChild(java.lang.String, asia.redact.bracket.properties.ValueModel)
-	 */
 	public void addChild(String name, ValueModel model){
 		NodeImpl n = new NodeImpl(name,model);
 		addChild(n);
 	}
 	
-	/* (non-Javadoc)
-	 * @see asia.redact.bracket.properties.Node#getChild(java.lang.String)
-	 */
 	public Node getChild(String nodeName){
 		for(Node n : children){
 			if(n.getName().equals(nodeName)) return n;
@@ -75,9 +63,6 @@ public class NodeImpl implements Node, Serializable {
 		return null;
 	}
 	
-	/* (non-Javadoc)
-	 * @see asia.redact.bracket.properties.Node#getDescendant(java.lang.String)
-	 */
 	public Node getDescendant(String nodePath){
 		
 		Node node = this;
@@ -90,16 +75,11 @@ public class NodeImpl implements Node, Serializable {
 		return node;
 	}
 	
-	/* (non-Javadoc)
-	 * @see asia.redact.bracket.properties.Node#hasValue()
-	 */
 	public boolean hasValue(){
 		return value !=null;
 	}
 	
-	/* (non-Javadoc)
-	 * @see asia.redact.bracket.properties.Node#get()
-	 */
+	
 	public String get(){
 		if(value==null) throw new RuntimeException("Missing value, which should not happen because you would have called hasValue() to check first.");
 		return value.getValue();
@@ -154,5 +134,20 @@ public class NodeImpl implements Node, Serializable {
 	public ValueModel getValue() {
 		return value;
 	}
+
+	@Override
+	public String toString() {
+		StringBuffer buf = new StringBuffer();
+		buf.append(name);
+		buf.append("=");
+		buf.append(value);
+		buf.append("\n");
+		for(Node child: children){
+			buf.append(child.toString());
+		}
+		
+		return buf.toString();
+	}
+	
 	
 }

@@ -1,9 +1,8 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
-
 package asia.redact.bracket.properties;
 
 import java.io.File;
@@ -21,9 +20,7 @@ import java.util.Set;
 import asia.redact.bracket.properties.Properties.Mode;
 
 /**
- * <pre>
  * Output the properties to various data sinks and in various charsets and formats.
- * </pre>
  * 
  * @author Dave
  *
@@ -41,8 +38,6 @@ public class OutputAdapter {
 	/**
 	 * Caution, uses FileWriter - defaults to local encoding
 	 * 
-	 * @param file
-	 * @param format
 	 */
 	public void writeTo(File file){
 		writeTo(file,new BasicOutputFormat());
@@ -51,8 +46,6 @@ public class OutputAdapter {
 	/**
 	 * Caution, uses FileWriter - defaults to local encoding
 	 * 
-	 * @param file
-	 * @param format
 	 * @deprecated
 	 */
 	public void writeTo(File file, OutputFormat format) {
@@ -74,10 +67,6 @@ public class OutputAdapter {
 	
 	/**
 	 * Use to control the format of the output. Can be used with ExplicitOutputFormat
-	 * 
-	 * @param file
-	 * @param format
-	 * @param charset
 	 */
 	public void writeTo(OutputStream out, OutputFormat format, Charset charset) {
 		
@@ -99,9 +88,6 @@ public class OutputAdapter {
 	/**
 	 * Use to control the format of the output. Can be used with ExplicitOutputFormat
 	 * 
-	 * @param file
-	 * @param format
-	 * @param charset
 	 */
 	public void writeTo(File file, OutputFormat format, Charset charset) {
 		FileOutputStream out = null;
@@ -126,9 +112,6 @@ public class OutputAdapter {
 	 * 
 	 * Use AsciiOutputFormat to get unicode escapes or an output format with similar filtering.
 	 * 
-	 * @param file
-	 * @param format
-	 * @param charset
 	 */
 	public void writeAsciiTo(File file, OutputFormat format) {
 		writeTo(file, format, Charset.forName("ISO-8859-1"));
@@ -137,10 +120,6 @@ public class OutputAdapter {
 	/**
 	 * This is specifically intended for compatibility with java.util.Properties, which outputs in ISO-8859-1 (US-ASCII)
 	 * 
-	 * 
-	 * @param file
-	 * @param format
-	 * @param charset
 	 */
 	public void writeAsciiTo(File file) {
 		writeTo(file, new AsciiOutputFormat(), Charset.forName("ISO-8859-1"));
@@ -150,7 +129,6 @@ public class OutputAdapter {
 		try {
 			writeTo(writer, new AsciiOutputFormat());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -191,7 +169,7 @@ public class OutputAdapter {
 	}
 	
 	public void writeTo(Writer writer) throws IOException {
-		writeTo(writer,new BasicOutputFormat());
+		writeTo(writer,new PlainOutputFormat());
 	}
 	
 	/**
@@ -216,7 +194,6 @@ public class OutputAdapter {
 	 * 
 	 * </pre>
 	 * 
-	 * @param out
 	 */
 	public void writeAsXml(final Writer out){
 		

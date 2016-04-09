@@ -11,7 +11,7 @@ import asia.redact.bracket.properties.line.Line;
 import asia.redact.bracket.properties.line.LineScanner;
 /**
  * <pre>
- * This lexer uses the LineScanner to build a list of tokens suitable for use by PropertiesParser. 
+ * Another attempt at lexing. This lexer uses the LineScanner to build a list of tokens suitable for use by PropertiesParser. 
  * 
  * Scan a properties file conforming to the description at
  * http://download.oracle.com/javase/6/docs/api/java/util/Properties.html#load(java.io.Reader)

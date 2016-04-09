@@ -1,6 +1,6 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
 package asia.redact.bracket.properties.alt;
@@ -8,14 +8,8 @@ package asia.redact.bracket.properties.alt;
 import asia.redact.bracket.properties.line.*;
 import asia.redact.bracket.properties.*;
 /**
- * <pre>
  * 
- * Parse a file in the Dot Properties format.
- * 
- * TODO Does not support compatibility mode 
- * 
- * 
- * </pre>
+ * Experimental. Parse a file in the Dot Properties format.
  * 
  * @author Dave
  *

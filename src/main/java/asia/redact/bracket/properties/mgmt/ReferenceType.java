@@ -1,6 +1,6 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011-2014 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
 package asia.redact.bracket.properties.mgmt;
@@ -12,6 +12,7 @@ package asia.redact.bracket.properties.mgmt;
  * <tr><td>DIRECT</td><td>Used with properties file formatted Strings, "mykey=val1\nkey2=val2"</td></tr>
  * <tr><td>COMMANDLINE_OVERRIDE</td><td>Used to indicate a single property we want to look for on the command line, such as "key1"</td></tr>
  * </table>
+ * 
  * @author Dave
  *
  */

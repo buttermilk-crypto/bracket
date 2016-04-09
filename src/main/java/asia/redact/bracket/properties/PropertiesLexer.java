@@ -1,9 +1,8 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
-
 package asia.redact.bracket.properties;
 
 import java.io.File;
@@ -62,7 +61,6 @@ public class PropertiesLexer {
 	 * Convenience method, swallows the input whole
 	 * This method filters for unicode escapes if the mode is Compatibility
 	 * 
-	 * @param in
 	 */
 	public PropertiesLexer(String input) {
 		super();
@@ -93,7 +91,6 @@ public class PropertiesLexer {
 	 * Convenience method, swallows the input whole
 	 * This method filters for unicode escapes if the mode is Compatibility
 	 * 
-	 * @param in
 	 */
 	public PropertiesLexer(Reader in){
 		//this(new InputAdapter().asString(in));
@@ -125,7 +122,6 @@ public class PropertiesLexer {
 	 * This method filters for unicode escapes if the mode is Compatibility
 	 * This method requires we specify the explicit charset of the file
 	 * 
-	 * @param in
 	 */
 	public PropertiesLexer(File in, Charset charset){
 	   String str = new InputAdapter().asString(in,charset);
@@ -155,7 +151,6 @@ public class PropertiesLexer {
 	 * Convenience method, swallows the input whole
 	 * This method filters for unicode escapes if the mode is Compatibility
 	 * 
-	 * @param in
 	 */
 	public PropertiesLexer(InputStream in){
 

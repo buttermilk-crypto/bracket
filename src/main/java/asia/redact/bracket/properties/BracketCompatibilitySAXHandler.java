@@ -1,3 +1,8 @@
+/*
+ *  This file is part of Bracket Properties
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
+ *
+ */
 package asia.redact.bracket.properties;
 
 import java.io.IOException;
@@ -12,14 +17,10 @@ import org.xml.sax.SAXException;
 import asia.redact.bracket.util.AsciiToNativeFilterReader;
 
 /**
- * <pre>
- * Implement a SAXParser handler to consume the SAX events and turn that into a Properties file.Assume the
- * input is ISO-8859-1 and must be parsed for UTF escaped data in the values.
+ * Package protected. Implement a SAXParser handler to consume the SAX events and turn that into a 
+ * Properties file. Assume the input is ISO-8859-1 and must be parsed for escaped data in the values.
  * 
  * @author Dave
- * 
- * </pre>
- *
  */
 
 class BracketCompatibilitySAXHandler extends BracketSaxHandler {
@@ -63,8 +64,8 @@ class BracketCompatibilitySAXHandler extends BracketSaxHandler {
 		if(count == 0) {
 			if(qName.equals("nproperties")){
 				String namespace = attributes.getValue("xmlns");
-				if(namespace == null || !namespace.equals("http://code.google.com/p/bracket-properties")){
-					throw new RuntimeException("Bad namespace, attribute xmlns must be set to 'http://code.google.com/p/bracket-properties'");
+				if(namespace == null || !namespace.equals("http://github.com/buttermilk-crypto/bracket")){
+					throw new RuntimeException("Bad namespace, attribute xmlns must be set to 'http://github.com/buttermilk-crypto/bracket'");
 				}
 			}else{
 				throw new RuntimeException("Bracket properties serialized with xml must have a top level element called 'nproperties'");

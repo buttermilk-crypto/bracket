@@ -1,3 +1,8 @@
+/*
+ *  This file is part of Bracket Properties
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
+ *
+ */
 package asia.redact.bracket.properties;
 
 import java.util.ArrayList;
@@ -8,15 +13,10 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 
 /**
- * <pre>
  * Implement a SAXParser handler to consume the SAX events and turn that into a Properties file.
- *  It would be cleaner to use Dom4J or something like that, but I wanted to
- * avoid additional dependencies where I could.
+ * It would be cleaner to use Dom4J or something like that, but I wanted to avoid additional dependencies where I could.
  * 
  * @author Dave
- * 
- * </pre>
- *
  */
 
 class BracketPropertiesSAXHandler extends BracketSaxHandler {
@@ -58,8 +58,8 @@ class BracketPropertiesSAXHandler extends BracketSaxHandler {
 		if(count == 0) {
 			if(qName.equals("nproperties")){
 				String namespace = attributes.getValue("xmlns");
-				if(namespace == null || !namespace.equals("http://code.google.com/p/bracket-properties")){
-					throw new RuntimeException("Bad namespace, attribute xmlns must be set to 'http://code.google.com/p/bracket-properties'");
+				if(namespace == null || !namespace.equals("http://github.com/buttermilk-crypto/bracket")){
+					throw new RuntimeException("Bad namespace, attribute xmlns must be set to 'http://github.com/buttermilk-crypto/bracket'");
 				}
 			}else{
 				throw new RuntimeException("Bracket properties serialized with xml must have a top level element called 'nproperties'");

@@ -116,7 +116,7 @@ Output is
  
  We have lots of syntactic sugar:
  
-	props.put("key.int", 10);
+		props.put("key.int", 10);
 		props.put("key.float", 1f);
 		props.put("key.long", 1L);
 		props.put("key.bool", true);
@@ -138,6 +138,22 @@ Output is
 			System.err.println(bs.get(i));
 		}
 	
+## Friendly Boolean Values
+
+	props.put("myflag", true);
+	props.put("myflag0", "enabled");
+	props.put("myflag1", "ok");
+	props.put("myflag2", "yes");
+	props.put("myflag3", "disabled");
+	props.put("myflag4", "no");
+	
+	props.booleanValue("myflag"); // returns true
+	props.booleanValue("myflag0"); // returns true
+	props.booleanValue("myflag1"); // returns true
+	props.booleanValue("myflag2"); // returns true
+	props.booleanValue("myflag3"); // returns false
+	props.booleanValue("myflag4"); // returns false
+
 
 ## List Support
 
@@ -263,4 +279,66 @@ The api for it looks like this:
 The algorithm is good enough that each invocation creates a different obfuscation.
 
  
+## XML Support
+
+Not sure how useful this is but some people seem interested. 
+
+input file:
+
+	a.b.c=value
+	a.b.c.d=subvalue1
+	a.b.c.e=subvalue2
+
+Code:
+
+	Properties props = Properties.Factory.getInstance();
+	
+	props.put("a.b.c", "value");
+	props.put("a.b.c.d", "subvalue1");
+	props.put("a.b.c.e", "subvalue2");
+	
+	OutputAdapter outAdapter = new OutputAdapter(props);
+	StringWriter writer = new StringWriter();
+	outAdapter.writeAsXml(writer);
+
+Output:
+
+	<?xml version="1.0" encoding="UTF-8"?>
+	 <nproperties xmlns="http://github.com/buttermilk-crypto/bracket">
+	  <na>
+	   <nb>
+	    <nc>
+	     <s>=</s>
+	     <v><![CDATA[value]]></v>
+	     <nd>
+	      <s>=</s>
+	      <v><![CDATA[subvalue1]]></v>
+	    </nd>
+	     <ne>
+	      <s>=</s>
+	      <v><![CDATA[subvalue2]]></v>
+	    </ne>
+	   </nc>
+	  </nb>
+	 </na>
+	</nproperties>
+
+
+
+##Immutable Properties Support
+
+The idea is that once loaded the properties are both thread-safe and unchangable. I think this is prudent and 
+actually often what is wanted for a config file.
+
+	props = Properties.Factory.immutableInstance(props);
+
+	props.put("key", "value"); //throws an UnsupportedOperationException
+	
+	
+
+
+
+ 
+
+
 

@@ -1,9 +1,8 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
-
 package asia.redact.bracket.properties;
 
 import java.util.List;
@@ -11,10 +10,9 @@ import java.util.List;
 import asia.redact.bracket.util.NativeToAsciiFilter;
 
 /**
- * <pre>
  * Compatibility format for simulating java.util.Properties output by encoding characters above ASCII 127 with 
- * unicode escapes. Use in conjunction with OutputAdapter.writeAsciiTo(). 
- * </pre>
+ * unicode escapes. Use in conjunction with OutputAdapter.writeAsciiTo(). This is deprecated but retained for documentation
+
  * 
  * @author Dave
  * @deprecated use AsciiOutputFormat

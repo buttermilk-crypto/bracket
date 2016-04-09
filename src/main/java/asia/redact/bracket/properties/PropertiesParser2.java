@@ -1,6 +1,6 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
 package asia.redact.bracket.properties;
@@ -11,15 +11,12 @@ import java.util.concurrent.locks.ReentrantLock;
 import asia.redact.bracket.properties.line.Line;
 import asia.redact.bracket.properties.line.LineScanner;
 /**
- * <pre>
  * Use the line scanner to load a Properties implementation.
  * 
- * This class does not use PropertiesToken, it is a "streaming" parser
+ * This class does not use PropertiesToken, it is almost a "streaming" parser
  * which reads the tokens from the line and parses as it reads. 
  * It is intended for low memory situations or for very large properties files, 
- * where it ought to perform a bit better.
- * 
- * </pre>
+ * where it ought to perform a bit better than PropertiesParser.
  * 
  * @author Dave
  *

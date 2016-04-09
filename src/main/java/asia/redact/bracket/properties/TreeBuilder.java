@@ -6,7 +6,7 @@
 package asia.redact.bracket.properties;
 
 /**
- * Private class for creating trees - internal
+ * package protected class for creating trees - internal
  * 
  * @author Dave
  *

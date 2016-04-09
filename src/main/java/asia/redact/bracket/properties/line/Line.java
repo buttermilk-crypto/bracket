@@ -1,6 +1,6 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
 package asia.redact.bracket.properties.line;
@@ -14,12 +14,9 @@ import asia.redact.bracket.properties.PropertiesTokenType;
 
 
 /**
- * <pre>
  * Representation of a line of text in a file. Index is the absolute offset of this line in the file at the time it was read out.
  * 
  * This class is thread-safe.
- * 
- * </pre>
  * 
  * @author Dave
  *

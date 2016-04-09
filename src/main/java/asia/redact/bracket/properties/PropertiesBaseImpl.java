@@ -1,6 +1,6 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
 package asia.redact.bracket.properties;
@@ -11,7 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.regex.Pattern;
 
 /**
- * Constants and regex patterns of general applicability
+ * Constants and regex patterns of general applicability to all the Properties implementation classes
  * 
  * @author Dave
  *

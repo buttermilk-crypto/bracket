@@ -1,6 +1,6 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
 package asia.redact.bracket.properties;
@@ -9,11 +9,8 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.HashSet;
 /**
- * <pre>
- * Format properties into xml. The default namespace is http://code.google.com/p/bracket-properties
- * 
+ * Format properties into xml. The default namespace is http://github.com/buttermilk-crypto/bracket
  * Not all properties may be amenable to this representation.
- *  </pre>
  *  
  * @author Dave
  *
@@ -21,7 +18,7 @@ import java.util.HashSet;
 public class GenerateXMLNodeVisitor implements NodeVisitor {
 	
 	final static String lineSeparator = System.getProperty("line.separator");
-	final String NS = "xmlns=\"http://code.google.com/p/bracket-properties\"";
+	final String NS = "xmlns=\"http://github.com/buttermilk-crypto/bracket\"";
 	final Writer writer;
 	int level;
 	final HashSet<Node> set = new HashSet<Node>();

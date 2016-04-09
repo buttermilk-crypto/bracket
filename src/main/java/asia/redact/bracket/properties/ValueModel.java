@@ -1,3 +1,8 @@
+/*
+ *  This file is part of Bracket Properties
+ *  Copyright 2011-2016 David R. Smith
+ *
+ */
 package asia.redact.bracket.properties;
 
 import java.io.Serializable;
@@ -18,6 +23,10 @@ public interface ValueModel extends Serializable {
 
 	public List<String> getValues();
 
+	/**
+	 * Concatenates the values
+	 * 
+	 */
 	public String getValue();
 	
 	public String toXML(int level);
@@ -25,8 +34,6 @@ public interface ValueModel extends Serializable {
 	/**
 	 * Output a reasonable representation of what the text for this key value pair would look like
 	 * 
-	 * @param key
-	 * @return
 	 */
 	public String asKeyValueRep(String key);
 	

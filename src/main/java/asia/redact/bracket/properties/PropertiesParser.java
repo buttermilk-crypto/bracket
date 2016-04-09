@@ -12,14 +12,10 @@ import java.util.Stack;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import asia.redact.bracket.properties.Properties.Mode;
+
 /**
- * <pre>
- * Populate a Properties object. Parser is a thread-safe one use object. The list of
- * tokens normally is the output of a PropertiesLexer but can be generated in other ways,
- * for example manually.
- * 
- * </pre>
+ * Populate a Properties object from an input source. Parser is a thread-safe one use object. The list of
+ * tokens normally is the output of a PropertiesLexer but can be generated in other ways, for example manually.
  * 
  * @author Dave
  * @see PropertiesLexer
@@ -44,7 +40,6 @@ public class PropertiesParser {
 	 * This constructor expects the tokens to be in parse order, it reverses the order as it pushes them onto the stack
 	 * (so the stack order is backwards to the parse). 
 	 * 
-	 * @param tokens
 	 */
 	public PropertiesParser(List<PropertiesToken> tokens) {
 		super();
@@ -59,7 +54,6 @@ public class PropertiesParser {
 	 * This constructor expects the tokens to be in reverse parse order, it uses the stack as-is
 	 * (the stack order is backwards to the parse order). 
 	 * 
-	 * @param tokens
 	 */
 	public PropertiesParser(Stack<PropertiesToken> tokens) {
 		super();
@@ -104,6 +98,7 @@ public class PropertiesParser {
 				
 				// meta data
 				if(peek().type==PropertiesTokenType.META_DATA){
+					@SuppressWarnings("unused")
 					PropertiesToken t = pop(); //comment line value
 				//	analyzeMetaData(t.text);
 					pop(); // remove the line break

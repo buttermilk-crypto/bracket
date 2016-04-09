@@ -1,118 +1,111 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
-
 package asia.redact.bracket.properties;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+
 /**
- * <pre>
- * Used to construct localized properties file names from a base name and a Locale. The path
- * is assumed to be on the external file system.
- * 
- * </pre>
+ * Used to construct localized properties file names from a base name and a
+ * Locale. The path is assumed to be on the external file system.
  * 
  * @see LocaleStringBuilder
  * @author Dave
  *
  */
 public class ExternalizedLocaleStringBuilder {
-	
+
 	Locale locale;
 	String baseName;
-	
+
 	public ExternalizedLocaleStringBuilder(String baseName, Locale locale) {
 		super();
 		this.locale = locale;
-		
-		if(baseName.endsWith(".properties")) {
-			this.baseName = baseName.substring(0,baseName.length()-11);
-		}else{
+
+		if (baseName.endsWith(".properties")) {
+			this.baseName = baseName.substring(0, baseName.length() - 11);
+		} else {
 			this.baseName = baseName;
 		}
 	}
-	
+
 	public List<String> getSearchStrings() {
 		ArrayList<String> list = new ArrayList<String>();
-		
-		//baseName
+
+		// baseName
 		{
 			StringBuilder b = new StringBuilder();
-			b.append(baseName)
-			.append(".properties");
+			b.append(baseName).append(".properties");
 			list.add(b.toString());
 		}
-		
-		//baseName_en
-		if(hasLanguage()) {
+
+		// baseName_en
+		if (hasLanguage()) {
 			StringBuilder b = new StringBuilder();
-			b.append(baseName)
-			.append("_")
-			.append(locale.getLanguage())
-			.append(".properties");
+			b.append(baseName).append("_").append(locale.getLanguage())
+					.append(".properties");
 			list.add(b.toString());
 		}
-		
-		//baseName_en_US
-		if(hasLanguageCountry()) {
+
+		// baseName_en_US
+		if (hasLanguageCountry()) {
 			StringBuilder b = new StringBuilder();
-			b.append(baseName)
-			.append("_")
-			.append(locale.getLanguage())
-			.append("_")
-			.append(locale.getCountry())
-			.append(".properties");
+			b.append(baseName).append("_").append(locale.getLanguage())
+					.append("_").append(locale.getCountry())
+					.append(".properties");
 			list.add(b.toString());
 		}
-		
-		//baseName_en_US_WINDOWS
-		if(hasLanguageCountryVariant()) {
+
+		// baseName_en_US_WINDOWS
+		if (hasLanguageCountryVariant()) {
 			StringBuilder b = new StringBuilder();
-			b.append(baseName)
-			.append("_")
-			.append(locale.getLanguage())
-			.append("_")
-			.append(locale.getCountry())
-			.append("_")
-			.append(locale.getVariant())
-			.append(".properties");
+			b.append(baseName).append("_").append(locale.getLanguage())
+					.append("_").append(locale.getCountry()).append("_")
+					.append(locale.getVariant()).append(".properties");
 			list.add(b.toString());
 		}
-		
+
 		return list;
 	}
-	
+
 	public List<String> getValidPaths() {
 		List<String> paths = getSearchStrings();
 		List<String> valid = new ArrayList<String>();
-		for(String path:paths){
+		for (String path : paths) {
 			File file = new File(path);
-			if(file.isFile()){
+			if (file.isFile()) {
 				valid.add(path);
 			}
 		}
 		return valid;
 	}
-	
+
 	private boolean hasLanguageCountryVariant() {
-		if(locale.getLanguage().equals("")) return false;
-		if(locale.getCountry().equals("")) return false;
-		if(locale.getVariant().equals("")) return false;
+		if (locale.getLanguage().equals(""))
+			return false;
+		if (locale.getCountry().equals(""))
+			return false;
+		if (locale.getVariant().equals(""))
+			return false;
 		return true;
 	}
+
 	private boolean hasLanguageCountry() {
-		if(locale.getLanguage().equals("")) return false;
-		if(locale.getCountry().equals("")) return false;
+		if (locale.getLanguage().equals(""))
+			return false;
+		if (locale.getCountry().equals(""))
+			return false;
 		return true;
 	}
-	
+
 	private boolean hasLanguage() {
-		if(locale.getLanguage().equals("")) return false;
+		if (locale.getLanguage().equals(""))
+			return false;
 		return true;
 	}
 
@@ -147,5 +140,5 @@ public class ExternalizedLocaleStringBuilder {
 			return false;
 		return true;
 	}
-	
+
 }

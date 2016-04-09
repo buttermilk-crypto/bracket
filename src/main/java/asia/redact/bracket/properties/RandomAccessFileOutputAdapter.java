@@ -34,9 +34,6 @@ public class RandomAccessFileOutputAdapter {
 	/**
 	 * Write it out. The file must be closed externally 
 	 * 
-	 * @param file
-	 * @param format
-	 * @throws IOException
 	 */
 	public void writeTo(RandomAccessFile file, OutputFormat format) throws IOException {
 		Set<Entry<String,ValueModel>> set = props.getPropertyMap().entrySet();

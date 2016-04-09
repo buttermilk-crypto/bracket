@@ -1,9 +1,8 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
-
 package asia.redact.bracket.properties;
 
 import java.text.SimpleDateFormat;
@@ -12,10 +11,8 @@ import java.util.List;
 import asia.redact.bracket.util.NativeToAsciiFilter;
 
 /**
- * <pre>
  * Compatibility format for simulating java.util.Properties output by encoding characters above ASCII 127 with 
- * unicode escapes. Use in conjunction with OutputAdapter.writeAsciiTo(). 
- * </pre>
+ * unicode escapes. Used in conjunction with OutputAdapter.writeAsciiTo(). 
  * 
  * @author Dave
  *
@@ -84,15 +81,11 @@ public class AsciiOutputFormat implements OutputFormat {
 		return buf.toString();
 	}
 
-
-
 	public String formatFooter() {
 		StringBuffer buf = new StringBuffer(lineSeparator);
 		buf.append("#;; eof");
 		buf.append(lineSeparator);
 		return buf.toString();
 	}
-
-
 
 }

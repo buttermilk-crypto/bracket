@@ -591,4 +591,17 @@ public class ImmutablePropertiesImpl extends PropertiesBaseImpl implements Prope
 		throw new UnsupportedOperationException();
 	}
 
+	// TODO, improve
+	@Override
+	public Properties slice(String root){
+		PropertiesImpl impl = new PropertiesImpl();
+		for(String key : this.getPropertyMap().keySet()){
+			if(key.startsWith(root)){
+				ValueModel model = this.getPropertyMap().get(key);
+				impl.put(key,model.getValue());
+			}
+		}
+		return impl;
+	}
+
 }

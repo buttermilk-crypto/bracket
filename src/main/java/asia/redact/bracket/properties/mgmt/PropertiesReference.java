@@ -1,6 +1,6 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011-2014 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
 package asia.redact.bracket.properties.mgmt;
@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 /**
  * 
- * Data type to represent one of:
+ * <p>Data type to represent one of:</p>
  * 
  * <table>
  * <tr>

@@ -1,11 +1,15 @@
+/*
+ *  This file is part of Bracket Properties
+ *  Copyright 2011-2016 David R. Smith
+ *
+ */
 package asia.redact.bracket.properties;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * <p>
- * A ValueModel in which the internals cannot be changed once the constructor is called.</p>
+ * <p>A ValueModel in which the internals cannot be changed once the constructor is called.</p>
  * 
  * @author Dave
  *

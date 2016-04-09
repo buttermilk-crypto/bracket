@@ -1,6 +1,6 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
 package asia.redact.bracket.properties;
@@ -72,8 +72,7 @@ public class ArrayListPropertiesImpl extends PropertiesBaseImpl implements Prope
 	
 	/**
 	 * Given a key, locate our Entry in the array. This is thread-safe
-	 * @param key
-	 * @return
+	 * 
 	 */
 	public Entry find(String key) {
 		lock.lock();
@@ -91,8 +90,6 @@ public class ArrayListPropertiesImpl extends PropertiesBaseImpl implements Prope
 	/**
 	 * Update an entry by index. Thread-safe.
 	 * 
-	 * @param index
-	 * @param entry
 	 */
 	public void updateAt(int index, Entry entry){
 		lock.lock();
@@ -108,7 +105,6 @@ public class ArrayListPropertiesImpl extends PropertiesBaseImpl implements Prope
 	 * Update a position based on the key found in the entry. Thread-safe. If the key is not found, just add it by
 	 * calling list.add();
 	 * 
-	 * @param entry
 	 */
 	public void update(Entry entry) {
 		lock.lock();
@@ -265,9 +261,6 @@ public class ArrayListPropertiesImpl extends PropertiesBaseImpl implements Prope
 	/**
 	 * Complement of the above
 	 * 
-	 * @param key
-	 * @param ch
-	 * @param l
 	 */
 	public void putList(String key, char ch, List<String> l) {
 		StringBuffer buf = new StringBuffer();
@@ -547,7 +540,6 @@ public class ArrayListPropertiesImpl extends PropertiesBaseImpl implements Prope
 	 * with the incoming are kept, keys that collide are overwritten 
 	 * with the new values
 	 * 
-	 * @param props
 	 */
 	public Properties merge(Properties props) {
 		merge(props,false,false);
@@ -608,7 +600,7 @@ public class ArrayListPropertiesImpl extends PropertiesBaseImpl implements Prope
 	}
 
 	/**
-	 * Caution
+	 * Caution - can have serious consequences if misused
 	 * 
 	 */
 	@Override
@@ -787,8 +779,6 @@ public class ArrayListPropertiesImpl extends PropertiesBaseImpl implements Prope
 	
 	/**
 	 * Return null if out of bounds
-	 * @param index
-	 * @return
 	 */
 	public Entry atIndex(int index){
 		try {
@@ -806,6 +796,18 @@ public class ArrayListPropertiesImpl extends PropertiesBaseImpl implements Prope
 	@Override
 	public void put(String key, long val){
 		put(key,String.valueOf(val));
+	}
+
+	@Override
+	public Properties slice(String root){
+		PropertiesImpl impl = new PropertiesImpl();
+		for(String key : this.getPropertyMap().keySet()){
+			if(key.startsWith(root)){
+				ValueModel value = find(key).getModel();
+				impl.getPropertyMap().put(key, value);
+			}
+		}
+		return impl;
 	}
 
 }

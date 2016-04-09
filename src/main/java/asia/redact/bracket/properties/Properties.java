@@ -218,6 +218,13 @@ public interface Properties extends Serializable {
 	 */
 	public Node getTree(GroupParams params);
 	
+	
+	/**
+	 * Return a Properties object with only the set of keys which match the root. 
+	 * 
+	 */
+	public Properties slice(String root);
+	
 	/**
 	 * Get the list of comments, return an empty list if none
 	 * 

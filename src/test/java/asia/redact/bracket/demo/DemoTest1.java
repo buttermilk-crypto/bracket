@@ -1,3 +1,8 @@
+/*
+ *  This file is part of Bracket Properties
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
+ *
+ */
 package asia.redact.bracket.demo;
 
 import java.io.File;
@@ -21,6 +26,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Comparator;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import asia.redact.bracket.properties.Comment;
@@ -76,8 +82,7 @@ public class DemoTest1 {
 		InputStream in = Thread.currentThread().getClass().getResourceAsStream("/demo.properties");
 		Properties props = Properties.Factory.getInstance(in);
 		if(props.containsKey("item0")){
-			String val = props.get("item0");
-			int intVal = props.intValue("item0");
+			Assert.assertTrue(props.containsKey("item0"));
 		}
 		
 		StringWriter writer = new StringWriter();
@@ -104,16 +109,16 @@ public class DemoTest1 {
 
         // Get properties from various input sources
 
-        Reader reader = new FileReader("file.properties");
+        Reader reader = new FileReader("src/test/resources/demo/template.properties");
         props = Properties.Factory.getInstance(reader);
 
-        File file = new File("file.properties");
+        File file = new File("src/test/resources/demo/template.properties");
         props = Properties.Factory.getInstance(file, Charset.forName("UTF-8"));
 
         InputStream in = getClass().getResourceAsStream("/log4j-example.properties");
         props = Properties.Factory.getInstance(in);
 
-        String urlPath = "https://bracket-properties.googlecode.com/svn/trunk/bracket-properties/src/test/resources/multi/1.properties";
+        String urlPath = "https://raw.githubusercontent.com/buttermilk-crypto/bracket/master/src/test/resources/10props.properties";
         URL url = new URL(urlPath);
         props = Properties.Factory.getInstance(url);
         
@@ -230,6 +235,7 @@ public class DemoTest1 {
 		Properties props = Properties.Factory.getInstance(in);
 		
 		String keyBase = "wrapper.java.classpath";
+		@SuppressWarnings("unused")
 		List<String> cp = props.getList(keyBase); // loop through this list
 		
 		ClassPathBuilder builder = new ClassPathBuilder(props);

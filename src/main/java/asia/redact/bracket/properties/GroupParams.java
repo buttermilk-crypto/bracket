@@ -1,10 +1,16 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011 David R. Smith
+ *  Copyright 2011-2016 David R. Smith
  *
  */
 package asia.redact.bracket.properties;
 
+/**
+ * Used by the XML implementation
+ * 
+ * @author Dave
+ *
+ */
 public class GroupParams {
 	
 	String separator;
@@ -52,6 +58,5 @@ public class GroupParams {
 	public void setRootNodeName(String rootNodeName) {
 		this.rootNodeName = rootNodeName;
 	}
-	
 	
 }

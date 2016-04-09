@@ -1,6 +1,6 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
 package asia.redact.bracket.properties;
@@ -15,14 +15,14 @@ import org.xml.sax.InputSource;
 import asia.redact.bracket.properties.Properties.Mode;
 
 /**
- * Wrapper on the SAXParser stuff
+ * Package protected wrapper on the SAXParser code
  * 
  * @author Dave
  * @see BracketPropertiesSAXHandler
  */
 class ParseXML {
 	
-	Properties props;
+	private Properties props;
 	
 	public ParseXML(){}
 	

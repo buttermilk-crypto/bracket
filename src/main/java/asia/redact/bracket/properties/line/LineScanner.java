@@ -1,6 +1,6 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
 package asia.redact.bracket.properties.line;
@@ -11,17 +11,16 @@ import java.io.Reader;
 /**
  * <pre>
  * 
- * This is an augmented version of java.io.BufferedReader from the Apache Harmony Java implementation. Source:
+ * This Lexer is a repurposed version of java.io.BufferedReader from the Apache Harmony Java implementation. Source:
  * http://www.java2s.com/Open-Source/Java-Document/Apache-Harmony-Java-SE/java-package/java/io/BufferedReader.java.htm
  * 
- * Scan a properties file conforming to the description at
+ * Scans a properties file conforming to the description at
  * http://download.oracle.com/javase/6/docs/api/java/util/Properties.html#load(java.io.Reader)
  * into tokens.
  * 
  * The idea here is that as we read lines, we return not just the line text but a Line object which
  * has knowledge of its internal parts, such as if the line has a key, etc. This allows for streaming
  * parsing and hopefully can handle very large properties files.
- * 
  * 
  * There is one additional extension: a comment line which starts with #;; is treated 
  * as transient (not read in). This is used later to generate a transient header and footer
@@ -32,6 +31,8 @@ import java.io.Reader;
  * PropertiesParser2 "pulls" the lines using this BufferedReader implementation.
  * 
  * Note: because this is a Reader, you must call close() on it when done.
+ * 
+ * <i>This lexer works better than the others and should be used as the default. (DRS, April 2016).</i> 
  * 
  * </pre>
  * 

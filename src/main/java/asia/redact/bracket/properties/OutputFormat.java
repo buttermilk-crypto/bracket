@@ -1,20 +1,16 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
-
 package asia.redact.bracket.properties;
 
 import java.util.List;
 
 /**
- * <pre>
  * You can implement custom output formats using this interface and OutputAdapter.writeTo(Writer, OutputFormat);
  * 
- * </pre>
  * @author Dave
- *
  */
 public interface OutputFormat {
 

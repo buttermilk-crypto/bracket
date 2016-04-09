@@ -1,21 +1,18 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
-
 package asia.redact.bracket.properties;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 /**
- * <pre>
  * Used to construct localized properties file names from a base name and a Locale.
  * This is slightly deceptive, the "baseName" is actually all the part of the package path of the file up to
  * but not including the extension. So, baseName could be the package name a.b.c.message where the bundle is
  * localized in a.b.c.message.properties,a.b.c.message_en.properties, etc. 
- * </pre>
  * 
  * @author Dave
  *

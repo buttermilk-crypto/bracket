@@ -1,6 +1,6 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
 package asia.redact.bracket.properties;
@@ -10,11 +10,9 @@ import java.util.AbstractMap;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * Implementated here are mainly the map-like facade methods available to the Properties class. 
+ * Implemented here in the base are the map-like facade methods available to the Properties class. 
  * 
  * @author Dave
  *
@@ -23,7 +21,7 @@ public abstract class AbstractMapDerivedPropertiesBase extends PropertiesBaseImp
 	
 	private static final long serialVersionUID = 1L;
 	
-	//data 
+	//the data 
 	protected AbstractMap<String,ValueModel> map;
 
 	public AbstractMapDerivedPropertiesBase() {

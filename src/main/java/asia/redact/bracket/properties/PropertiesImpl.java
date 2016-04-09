@@ -1,9 +1,8 @@
 /*
  *  This file is part of Bracket Properties
- *  Copyright 2011 David R. Smith
+ *  Copyright 2011-2016 David R. Smith, All Rights Reserved
  *
  */
-
 package asia.redact.bracket.properties;
 
 import java.io.IOException;
@@ -33,9 +32,7 @@ import asia.redact.bracket.util.EnvResolver;
 
 
 /**
- * <pre>
  * A better Properties class. This implementation class is thread-safe.
- * </pre>
  * 
  * @author Dave
  *
@@ -519,6 +516,17 @@ public class PropertiesImpl extends AbstractMapDerivedPropertiesBase implements 
 		PropertiesImpl impl = new PropertiesImpl();
 		for(String key : this.getPropertyMap().keySet()){
 			if(key.startsWith(params.getPartialKey())){
+				ValueModel value = map.get(key);
+				impl.getPropertyMap().put(key, value);
+			}
+		}
+		return impl;
+	}
+	
+	public Properties slice(String root){
+		PropertiesImpl impl = new PropertiesImpl();
+		for(String key : this.getPropertyMap().keySet()){
+			if(key.startsWith(root)){
 				ValueModel value = map.get(key);
 				impl.getPropertyMap().put(key, value);
 			}
