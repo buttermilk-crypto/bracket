@@ -6,6 +6,18 @@ wish java properties files could do better, chances are bracket-properties alrea
 
 ## Quickstart
 
+For maven, use:
+
+	<dependency>
+	    <groupId>asia.redact.bracket.properties</groupId>
+	    <artifactId>bracket-properties</artifactId>
+	    <version>1.3.6</version>
+	</dependency>
+
+For ant, download the jar from [Link] (https://www.cryptoregistry.com/downloads/bracket-properties/1.3.6/bracket-properties-1.3.6.jar)
+
+##Instantiation
+
 
 	// Get properties from various input sources
 	
