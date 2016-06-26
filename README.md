@@ -4,7 +4,9 @@ bracket properties is a library to work with java .properties files. It has many
 core java implementation such as retention of order and UTF-8 support. If you can think of something you
 wish java properties files could do better, chances are bracket-properties already has it. 
 
-## Quickstart
+New work on version 2.0 is [here](https://github.com/buttermilk-crypto/b2/bracket-properties)
+
+## Quickstart for version 1.3.6
 
 For maven, use:
 
@@ -14,7 +16,7 @@ For maven, use:
 	    <version>1.3.6</version>
 	</dependency>
 
-For ant, download the jar from [Link] (https://www.cryptoregistry.com/downloads/bracket-properties/1.3.6/bracket-properties-1.3.6.jar)
+For ant, download the jar from [Link](https://www.cryptoregistry.com/downloads/bracket-properties/1.3.6/bracket-properties-1.3.6.jar)
 
 ##Instantiation
 
